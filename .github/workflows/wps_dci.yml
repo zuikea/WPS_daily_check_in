@@ -25,4 +25,3 @@ jobs:
 #         env: 
 #            WPS_SID: ${{secrets.WPS_SID}}
 #         run: python WPS_sign_in.py
-
