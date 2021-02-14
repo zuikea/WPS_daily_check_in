@@ -31,10 +31,11 @@ jobs:
         with:
           server_address: smtp.qq.com
           server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
+          username: ${{ secrets.MAILUSERNAME }}
+          password: ${{ secrets.MAILPASSWORD }}
           #subject: Shanghai Weather Report (${{env.REPORT_DATE}})
           body: file://result.html
           to: freezuike@qq.com
+          #to: ${{ secrets.MAILNAME }}
           from: GitHub Actions
           content_type: text/html
