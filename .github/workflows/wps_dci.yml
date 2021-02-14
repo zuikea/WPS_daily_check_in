@@ -21,7 +21,22 @@ jobs:
         run: pip install -r ./requirements.txt
       - name: 'Working-invite'
         run: python WPS_accept_invitation.py
-#       - name: 'Working-signin'
-#         env: 
-#            WPS_SID: ${{secrets.WPS_SID}}
-#         run: python WPS_sign_in.py
+      - name: 'Working-signin'
+        env: 
+          WPS_SID: ${{secrets.WPS_SID}}
+          run: python WPS_sign_in.py
+      
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
+        with:
+          server_address: smtp.163.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          #subject: Shanghai Weather Report (${{env.REPORT_DATE}})
+          body: file://result.html
+          to: freezuike@qq.com
+          from: GitHub Actions
+          content_type: text/html
+
+    	
