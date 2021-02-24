@@ -1,4 +1,4 @@
-invite_userid = [345107811]
+invite_userids = [345107811]
 
 import json, os, time
 import requests
@@ -8,7 +8,6 @@ sids = [
     "V02StVuaNcoKrZ3BuvJQ1FcFS_xnG2k00af250d4002664c02f",
     "V02SWIvKWYijG6Rggo4m0xvDKj1m7ew00a8e26d3002508b828",
     "V02Sr3nJ9IicoHWfeyQLiXgvrRpje6E00a240b890023270f97",
-    
     "V02SBsNOf4sJZNFo4jOHdgHg7-2Tn1s00a338776000b669579",
     "V02S2oI49T-Jp0_zJKZ5U38dIUSIl8Q00aa679530026780e96",
     "V02ShotJqqiWyubCX0VWTlcbgcHqtSQ00a45564e002678124c",
@@ -17,8 +16,6 @@ sids = [
     "V02SPoOluAnWda0dTBYTXpdetS97tyI00a16135e002684bb5c",
     "V02Sb8gxW2inr6IDYrdHK_ywJnayd6s00ab7472b0026849b17",
     "V02SwV15KQ_8n6brU98_2kLnnFUDUOw00adf3fda0026934a7f",
-    #z
-    "V02SBsNOf4sJZNFo4jOHdgHg7-2Tn1s00a338776000b669579",
     "V02SC1mOHS0RiUBxeoA8NTliH2h2NGc00a803c35002693584d"
 ]
 mk = 0
