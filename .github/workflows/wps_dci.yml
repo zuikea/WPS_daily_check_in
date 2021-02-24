@@ -5,7 +5,7 @@ on:
     branches: 
       - main
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '30 2 * * *'
 
 jobs:
   daily_check_in:
@@ -20,25 +20,10 @@ jobs:
       - name: 'Install requirements'
         run: pip install -r ./requirements.txt
       - name: 'Working-invite'
+        env:
+          SERVER_KEY: ${{secrets.SERVER_KEY}}
         run: python WPS_accept_invitation.py
-#     - name: 'Working-signin'
-#       env: 
-#         WPS_SID: ${{secrets.WPS_SID}}
+#       - name: 'Working-signin'
+#         env: 
+#            WPS_SID: ${{secrets.WPS_SID}}
 #         run: python WPS_sign_in.py
-
-
-#      - name: 'Get Date'
-#        run: echo "REPORT_DATE=$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')" >> $GITHUB_ENV
-#      - name: 'Send mail'
-#       uses: dawidd6/action-send-mail@master
-#        with:
-#          server_address: smtp.qq.com
-#          server_port: 465
-#          username: ${{ secrets.MAILUSERNAME }}
-#          password: ${{ secrets.MAILPASSWORD }}
-#          subject: WPS会员邀请助力 (${{env.REPORT_DATE}})
-#          body: file://result.html
-#          to: freezuike@qq.com
-#          #to: ${{ secrets.MAILNAME }}
-#          from: GitHub Actions
-#          content_type: text/html
